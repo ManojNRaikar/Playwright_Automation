@@ -1,13 +1,17 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
-// import dotenv from "dotenv";
+import * as dotenv from "dotenv"; 
 
 
-// dotenv.config({ path: ".env.ui" });
+dotenv.config();
 
 const testDir = defineBddConfig({
   features: 'features/**.feature',
-  steps: 'Steps/**.ts',
+  steps: ['Steps/**.ts', // step definitions
+    'Steps/fixtures.ts', // custom fixtures
+    'Steps/world.ts'  // bdd world
+  ],
+
 });
 
 
@@ -39,7 +43,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: process.env.URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     // trace: 'on-first-retry',

@@ -1,11 +1,12 @@
-import { createBdd } from 'playwright-bdd';
-import { expect } from '@playwright/test';
+import { Given, When, Then} from "./world.ts";
+import { expect } from "@playwright/test";
 
-const { Given, When, Then } = createBdd();
 
-Given('I login to the demo store', async ({}) => {
-  // Step: Given I login to the demo store
-  // From: features\ecommerce.feature:4:5
+Given('I login to the demo store', async ({page}) => {
+  await page.goto(process.env.Base_URL!);
+});
+When('I enter valid credentials', async ({}) => {
+  
 });
 
 Then('I should be logged in successfully', async ({}) => {

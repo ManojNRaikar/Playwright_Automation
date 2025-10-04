@@ -2,6 +2,7 @@ Feature: E-commerce Website Testing
 
   Scenario: Login to store
     Given I login to the demo store
+    When I enter valid credentials
     Then I should be logged in successfully
 
   # Scenario: Add product to cart

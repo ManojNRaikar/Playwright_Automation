@@ -10,7 +10,4 @@ export const test = base.extend<UIFixtures>({
         await use(new LoginPage(page));
     }
 })
-
-export const expect = test.expect;
-
-
+export { expect } from "@playwright/test";
