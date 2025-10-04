@@ -1,10 +1,7 @@
-import { expect } from '@playwright/test';
 import { createBdd } from 'playwright-bdd';
+import { expect } from '@playwright/test';
 
 const { Given, When, Then } = createBdd();
-
-
-
 
 Given('I login to the demo store', async ({}) => {
   // Step: Given I login to the demo store
