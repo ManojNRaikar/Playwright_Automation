@@ -1,4 +1,4 @@
-import { test as base } from "@playwright/test";
+import { test as base, createBdd } from "playwright-bdd";
 import { LoginPage } from "../pages/loginpage";
 
 type UIFixtures = {
@@ -10,4 +10,4 @@ export const test = base.extend<UIFixtures>({
         await use(new LoginPage(page));
     }
 })
-export { expect } from "@playwright/test";
+export const { Given,When,Then} = createBdd(test);

@@ -6,11 +6,8 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const testDir = defineBddConfig({
-  features: 'features/**.feature',
-  steps: ['Steps/**.ts', // step definitions
-    'Steps/fixtures.ts', // custom fixtures
-    'Steps/world.ts'  // bdd world
-  ],
+  features: 'features/*.feature',
+  steps: 'Steps/**/*.ts',
 
 });
 
