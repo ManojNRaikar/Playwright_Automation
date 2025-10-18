@@ -1,7 +1,10 @@
 import { Page, expect } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class CartPage {
-  constructor(private page: Page) {}
+export class CartPage extends BasePage {
+  constructor( page: Page) {
+    super(page)
+  }
 
   async verifyProductInCart(product: string) {
     await this.page.click("#cartur");

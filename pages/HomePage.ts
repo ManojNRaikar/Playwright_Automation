@@ -1,7 +1,10 @@
 import { Page } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class HomePage {
-  constructor(private page: Page) {}
+export class HomePage extends BasePage {
+  constructor(public page: Page) {
+    super(page)
+  }
 
   async addProductToCart(product: string) {
     await this.page.click(`text=${product}`);

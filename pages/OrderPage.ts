@@ -1,7 +1,10 @@
 import { Page, expect } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class OrderPage {
-  constructor(private page: Page) {}
+export class OrderPage  extends BasePage{
+  constructor( page: Page) {
+    super(page)
+  }
 
   async placeOrder(name: string, creditCard: string) {
     await this.page.click("#cartur");
