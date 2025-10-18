@@ -1,17 +1,18 @@
 import { Page, expect } from "@playwright/test";
+import { BasePage } from "./BasePage";
 
-export class LoginPage {
-  readonly page
+export class LoginPage extends BasePage {
+ 
   constructor(page:Page) {
-    this.page=page
+   super(page)
   }
 
   async loginMethod(username: string, password: string) {
-    // await this.page.click("#login2");
-    // await this.page.fill("#loginusername", username);
-    // await this.page.fill("#loginpassword", password);
-    // await this.page.click("button:has-text('Log in')");
-    // await this.page.waitForTimeout(2000);
+    await this.page.click("#login2");
+    await this.page.fill("#loginusername", username);
+    await this.page.fill("#loginpassword", password);
+    await this.page.click("button:has-text('Log in')");
+    await this.page.waitForTimeout(2000);
   }
 
   async verifyLogin() {
