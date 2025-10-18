@@ -1,10 +1,6 @@
 import { test as base, createBdd } from "playwright-bdd";
 // import { LoginPage } from "../pages/loginpage";
 import { World } from "./world";
-// type world = {
-//     page:Page
-//     loginPage:LoginPage
-// }
 
 export const test = base.extend<{world:World}>({
     world:async({page},use,testInfo)=>{
