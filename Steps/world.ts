@@ -1,6 +1,7 @@
 import { Page, TestInfo } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
-import {HomePage} from "../pages/HomePage"
+import { HomePage } from "../pages/HomePage"
+// import * as Pages from "../pages/index"
 
 export class World{
     login:LoginPage;
