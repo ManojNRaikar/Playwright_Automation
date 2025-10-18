@@ -3,9 +3,9 @@ import { test } from "../../Steps/fixtures.ts";
 
 test.describe('E-commerce Website Testing', () => {
 
-  test('Login to store', async ({ Given, When, Then, loginPage, page }) => { 
-    await Given('I login to the demo store', null, { page }); 
-    await When('I enter valid credentials', null, { loginPage }); 
+  test('Login to store', async ({ Given, When, Then }) => { 
+    await Given('I login to the demo store'); 
+    await When('I enter valid credentials'); 
     await Then('I should be logged in successfully'); 
   });
 
