@@ -1,3 +1,5 @@
+⚙️Playwright-BDD-Specific-Commands (from playwright-bdd package)
+
 | Purpose                          | Command                                      |
 | -------------------------------- | -------------------------------------------- |
 | Generate test files from feature | `npx playwright-bdd codegen`                 |
