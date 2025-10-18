@@ -2,8 +2,8 @@ import { Given,When,Then } from './fixtures';
 
 
 Given('I login to the demo store', async function() {
-  // await page.goto(process.env.Base_URL!);
-  // await page.click('text=My Account');
+  await this.page.goto(process.env.Base_URL!);
+  await this.page.click('text=My Account');
   await this.login.loginMethod("demo","123")
 });
 When('I enter valid credentials', async function () {

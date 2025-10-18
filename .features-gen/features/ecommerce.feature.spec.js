@@ -17,6 +17,7 @@ test.use({
   $test: [({}, use) => use(test), { scope: 'test', box: true }],
   $uri: [({}, use) => use('features\\ecommerce.feature'), { scope: 'test', box: true }],
   $bddFileData: [({}, use) => use(bddFileData), { scope: "test", box: true }],
+  $world: [({ world }, use) => use(world), { scope: 'test', box: true }],
 });
 
 const bddFileData = [ // bdd-data-start
