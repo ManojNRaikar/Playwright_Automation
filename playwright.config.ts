@@ -7,7 +7,7 @@ dotenv.config();
 
 const testDir = defineBddConfig({
   features: 'features/*.feature',
-  steps: ['Steps/*.ts','Hooks/hooks.ts'],
+  steps: ['Steps/*.{ts,js}','Hooks/hooks.ts'],
 
 });
 
