@@ -11,9 +11,9 @@ export const test = base.extend<{world:World}>({
 
 export const {Given, When, Then, Before, After, BeforeStep, AfterStep} = createBdd(test,{worldFixture:'world'})
 
-
-
-
+//Use below method for Playwright style stepdefination
+// import { test as base, createBdd } from "playwright-bdd";
+// import { LoginPage } from "../pages/loginpage";
 // type UIFixtures = {
 //     loginPage:LoginPage;
 // }
