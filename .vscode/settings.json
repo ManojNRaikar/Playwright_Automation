@@ -1,3 +1,3 @@
 {
-    "cucumberautocomplete.steps": ["Steps/**.steps.ts"]
+    "cucumberautocomplete.steps": ["Steps/**.ts"]
 }

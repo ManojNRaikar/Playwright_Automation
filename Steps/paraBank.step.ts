@@ -1,6 +1,5 @@
 import {Given, When, Then} from "../Steps/fixtures"
 
-
 Given('User navigates to ParaBank login page', async function () {
   // Step: Given User navigates to ParaBank login page
   // From: features\paraBank.feature:5:5
@@ -35,3 +34,4 @@ Then('User logs out successfully', async function () {
   // Step: Then User logs out successfully
   // From: features\paraBank.feature:11:5
 });
+

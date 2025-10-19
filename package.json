@@ -9,7 +9,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.2",
     "playwright-bdd": "^8.4.1"
