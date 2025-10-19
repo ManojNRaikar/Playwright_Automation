@@ -15,6 +15,9 @@ test.describe('parabank Website', () => {
 
 // == technical section ==
 
+test.beforeEach('BeforeEach Hooks', ({ $runScenarioHooks }) => $runScenarioHooks('before', {  }));
+test.afterEach('AfterEach Hooks', ({ $runScenarioHooks }) => $runScenarioHooks('after', {  }));
+
 test.use({
   $test: [({}, use) => use(test), { scope: 'test', box: true }],
   $uri: [({}, use) => use('features\\parabankHome.feature'), { scope: 'test', box: true }],

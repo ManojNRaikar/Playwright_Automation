@@ -7,7 +7,7 @@ dotenv.config();
 
 const testDir = defineBddConfig({
   features: 'features/*.feature',
-  steps: 'Steps/**/*.ts',
+  steps: ['Steps/**/*.ts','Hooks/hooks.ts'],
 
 });
 
@@ -79,8 +79,12 @@ export default defineConfig({
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'],
         headless:false, channel: 'msedge' ,
+        // storageState: "test.json",
         launchOptions:{
         args:[
+          // "--start-maximized",
+          // "--disable-plugins",
+          // "--disable-extensions",
           "--edge-skip-compat-layer-relaunch"
         ]
       } }, 

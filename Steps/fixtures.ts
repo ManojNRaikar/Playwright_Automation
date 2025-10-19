@@ -9,7 +9,7 @@ export const test = base.extend<{world:World}>({
     }
 })
 
-export const {Given, When, Then, Before, After} = createBdd(test,{worldFixture:'world'})
+export const {Given, When, Then, Before, After, BeforeStep, AfterStep} = createBdd(test,{worldFixture:'world'})
 
 
 
