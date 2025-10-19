@@ -1,21 +1,23 @@
-import { Page, expect } from "@playwright/test";
-import { BasePage } from "./BasePage";
+import { Page, expect } from '@playwright/test';
+import {BasePage} from "../pages/BasePage"
+import {loginData} from '../copyText-TestData/loginData.ts'
 
 export class LoginPage extends BasePage {
- 
-  constructor(page:Page) {
-   super(page)
+  constructor(page: Page) {
+    super(page)
   }
 
-  async loginMethod(username: string, password: string) {
-    await this.page.click("#login2");
-    await this.page.fill("#loginusername", username);
-    await this.page.fill("#loginpassword", password);
-    await this.page.click("button:has-text('Log in')");
-    await this.page.waitForTimeout(2000);
+  private username = this.page.locator('input[name="username"]');
+  private password = this.page.locator('input[name="password"]');
+  private loginBtn = this.page.locator('input[value="Log In"]');
+
+  async navigate() {
+    await this.page.goto('https://parabank.parasoft.com/parabank/index.htm');
   }
 
-  async verifyLogin() {
-    await expect(this.page.locator("#nameofuser")).toBeVisible();
+  async loginMethod() {
+    await this.username.fill(loginData.validUser.username);
+    await this.password.fill(loginData.validUser.password);
+    await this.loginBtn.click();
   }
 }
