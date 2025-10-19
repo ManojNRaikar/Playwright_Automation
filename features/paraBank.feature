@@ -1,6 +1,6 @@
 Feature: ParaBank Online Banking - Fund Transfer
 
-  @smoke @Regression
+  @Regression @smoke
   Scenario: Verify user can login, transfer funds and see transaction
     Given User navigates to ParaBank login page
     When User logs in with username "john" and password "demo"
