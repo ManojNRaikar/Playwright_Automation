@@ -78,7 +78,12 @@ export default defineConfig({
     {
       name: 'Microsoft Edge',
       use: { ...devices['Desktop Edge'],
-        headless:false, channel: 'msedge' },
+        headless:false, channel: 'msedge' ,
+        launchOptions:{
+        args:[
+          "--edge-skip-compat-layer-relaunch"
+        ]
+      } }, 
     },
     // {
     //   name: 'Google Chrome',
