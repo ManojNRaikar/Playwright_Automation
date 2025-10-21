@@ -2,9 +2,6 @@ import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig, cucumberReporter } from 'playwright-bdd';
 import dotenv from "dotenv"; 
 import {resolve, join} from 'path';
-import { trace } from 'console';
-import { channel } from 'diagnostics_channel';
-import { report } from 'process';
 const timeout = 60 * 100
 
 /**
@@ -52,13 +49,15 @@ const config = {
     channel: 'msedge',
     video: 'retain-on-failure',
     viewport: null,
+     reporter: [cucumberReporter('html', {
+      outputFile: 'cucumber-report/index.html',
+      externalAttachments: true,
+    }),
+    ['html', { open: 'never' }],
+  ]
   },
   testDir:testDir,
-  // expect:
-  // {
-  //   timeout: process.env.EXPECT_TIMEOUT
-  // },
-  report:[cucumberReporter('html', { outputFile: '../cucumber-report/index.html',externalAttachments:true}), ['html',{open:'never'}]],
+  
 
   projects: 
   [

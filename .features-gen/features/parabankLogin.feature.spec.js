@@ -1,4 +1,4 @@
-// Generated from: features\parabankLogin.feature
+// Generated from: ..\features\parabankLogin.feature
 import { test } from "../../Steps/fixtures.ts";
 
 test.describe('parabank Applocation Login', () => {
@@ -20,9 +20,13 @@ test.afterEach('AfterEach Hooks', ({ $runScenarioHooks }) => $runScenarioHooks('
 
 test.use({
   $test: [({}, use) => use(test), { scope: 'test', box: true }],
-  $uri: [({}, use) => use('features\\parabankLogin.feature'), { scope: 'test', box: true }],
+  $uri: [({}, use) => use('..\\features\\parabankLogin.feature'), { scope: 'test', box: true }],
   $bddFileData: [({}, use) => use(bddFileData), { scope: "test", box: true }],
   $world: [({ world }, use) => use(world), { scope: 'test', box: true }],
+  page: async ({ page, $prompt }, use) => {
+    $prompt.setPage(page);
+    await use(page);
+  },
 });
 
 const bddFileData = [ // bdd-data-start
