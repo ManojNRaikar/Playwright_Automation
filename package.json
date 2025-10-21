@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "ui_tests":"npx bddgen --config configs/ui.playwright.config.ts && npx playwright test features/ --config configs/ui.playwright.config.ts --project=local"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
