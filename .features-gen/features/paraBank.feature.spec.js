@@ -1,4 +1,4 @@
-// Generated from: ..\features\paraBank.feature
+// Generated from: features\paraBank.feature
 import { test } from "../../Steps/fixtures.ts";
 
 test.describe('ParaBank Online Banking - Fund Transfer', () => {
@@ -22,13 +22,9 @@ test.afterEach('AfterEach Hooks', ({ $runScenarioHooks }) => $runScenarioHooks('
 
 test.use({
   $test: [({}, use) => use(test), { scope: 'test', box: true }],
-  $uri: [({}, use) => use('..\\features\\paraBank.feature'), { scope: 'test', box: true }],
+  $uri: [({}, use) => use('features\\paraBank.feature'), { scope: 'test', box: true }],
   $bddFileData: [({}, use) => use(bddFileData), { scope: "test", box: true }],
   $world: [({ world }, use) => use(world), { scope: 'test', box: true }],
-  page: async ({ page, $prompt }, use) => {
-    $prompt.setPage(page);
-    await use(page);
-  },
 });
 
 const bddFileData = [ // bdd-data-start

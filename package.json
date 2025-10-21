@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ui_tests":"npx bddgen --config configs/ui.playwright.config.ts && npx playwright test features/ --config configs/ui.playwright.config.ts --project=local"
+    "ui_tests":"npx bddgen --config configs/ui.playwright.config.ts && npx playwright test features/ --config configs/ui.playwright.config.ts --project=local",
+    "custom_config":"npx bddgen --config custom.playwright.config.ts && npx playwright test features/ --config custom.playwright.config.ts"
   },
   "keywords": [],
   "author": "",

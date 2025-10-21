@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { defineBddConfig,cucumberReporter } from 'playwright-bdd';
+import { defineBddConfig, cucumberReporter } from 'playwright-bdd';
 import dotenv from "dotenv"; 
 import {resolve, join} from 'path';
 import { trace } from 'console';
@@ -54,11 +54,11 @@ const config = {
     viewport: null,
   },
   testDir:testDir,
-  expect:
-  {
-    timeout: process.env.EXPECT_TIMEOUT
-  },
-  report:[cucumberReporter('html', { outputFile: '../cucumber-report/index.html'}), ['html',{open:'never'}]],
+  // expect:
+  // {
+  //   timeout: process.env.EXPECT_TIMEOUT
+  // },
+  report:[cucumberReporter('html', { outputFile: '../cucumber-report/index.html',externalAttachments:true}), ['html',{open:'never'}]],
 
   projects: 
   [

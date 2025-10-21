@@ -82,9 +82,9 @@ export default defineConfig({
         // storageState: "test.json",
         launchOptions:{
         args:[
-          // "--start-maximized",
-          // "--disable-plugins",
-          // "--disable-extensions",
+          "--start-maximized",
+          "--disable-plugins",
+          "--disable-extensions",
           "--edge-skip-compat-layer-relaunch"
         ]
       } }, 
