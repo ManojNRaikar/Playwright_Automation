@@ -24,7 +24,8 @@ const testDir = defineBddConfig({
   features: ['../features/*.feature'],
   steps: ['../Steps/*.{ts,js}','../Hooks/hooks.ts'],
   outputDir: '../.features-gen',
-  aiFix:{
+  aiFix:
+  {
     promptAttachment:true,
   }
 });
@@ -49,12 +50,7 @@ const config = {
     channel: 'msedge',
     video: 'retain-on-failure',
     viewport: null,
-     reporter: [cucumberReporter('html', {
-      outputFile: 'cucumber-report/index.html',
-      externalAttachments: true,
-    }),
-    ['html', { open: 'never' }],
-  ]
+    reporter: [cucumberReporter( 'html', {outputFile: 'cucumber-report/index.html',externalAttachments: true,}),['html', { open: 'never' }]]
   },
   testDir:testDir,
   

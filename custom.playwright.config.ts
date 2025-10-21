@@ -8,6 +8,10 @@ dotenv.config({ path: path.resolve(__dirname, '.env') });
 const testDir = defineBddConfig({
   features: ['features/*.feature'],
   steps: ['Steps/*.{ts,js}','Hooks/hooks.ts'],
+  aiFix:
+  {
+    promptAttachment:true,
+  }
 });
 
 export default defineConfig({
