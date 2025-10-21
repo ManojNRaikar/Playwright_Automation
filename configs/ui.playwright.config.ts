@@ -31,7 +31,7 @@ const testDir = defineBddConfig({
 });
 
 
-const config = {
+const config = ({
   use: {
     browserName:'chromium',
     trace:'off',
@@ -63,7 +63,7 @@ const config = {
       testIgnore:''
     }
   ]
-}
+})
 export default config
   
 
