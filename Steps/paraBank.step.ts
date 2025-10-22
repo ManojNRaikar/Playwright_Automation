@@ -21,10 +21,6 @@ Then('Transfer confirmation message should appear', async function () {
   await this.transferPage.verifyTransferSuccess()
 });
 
-Then('User verifies transaction in recent activity', async function () {
-await this.transferPage.verifyRecentActivity()
-});
-
 Then('User logs out successfully', async function () {
 await this.commanPage.clickLogout()
 });
