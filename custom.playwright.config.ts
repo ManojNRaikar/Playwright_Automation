@@ -16,7 +16,7 @@ const testDir = defineBddConfig({
 
 export default defineConfig({
   testDir,
-  workers:1,
+  workers:process.env.WORKER,
   reporter: [
         ['html',{open: 'never'}], // Playwright's built-in HTML reporter
         ['allure-playwright'], // Allure reporter
