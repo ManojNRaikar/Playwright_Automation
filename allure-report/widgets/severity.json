@@ -1,1 +1,1 @@
-[{"uid":"ffa34e1c60887939","name":"Login to parabank application","time":{"start":1761113894146,"stop":1761113898920,"duration":4774},"status":"passed","severity":"normal"}]
+[{"uid":"342203e493daae3e","name":"Login to parabank application","time":{"start":1761129878578,"stop":1761129884383,"duration":5805},"status":"passed","severity":"normal"},{"uid":"62cb4a11e8d31e59","name":"Verify user can login, transfer funds and see transaction","time":{"start":1761129878592,"stop":1761129909528,"duration":30936},"status":"broken","severity":"normal"}]

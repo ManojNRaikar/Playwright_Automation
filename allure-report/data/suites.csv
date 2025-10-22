@@ -1,2 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4774","Login to parabank application","Microsoft Edge","Wed Oct 22 11:48:14 IST 2025","passed","Wed Oct 22 11:48:18 IST 2025","parabank Applocation Login","features\parabankLogin.feature.spec.js","",""
+"","5805","Login to parabank application","Microsoft Edge","Wed Oct 22 16:14:38 IST 2025","passed","Wed Oct 22 16:14:44 IST 2025","parabank Applocation Login","features\parabankLogin.feature.spec.js","",""
+"","30936","Verify user can login, transfer funds and see transaction","Microsoft Edge","Wed Oct 22 16:14:38 IST 2025","broken","Wed Oct 22 16:15:09 IST 2025","ParaBank Online Banking - Fund Transfer","features\paraBank.feature.spec.js","",""

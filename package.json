@@ -21,6 +21,7 @@
     "playwright-bdd": "^8.4.1"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^12.2.0",
     "dotenv": "^17.2.3"
   }
 }
