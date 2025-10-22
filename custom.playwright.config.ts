@@ -18,7 +18,7 @@ export default defineConfig({
   testDir,
   workers:1,
   reporter: [
-        ['html',{open: 'never'}], // Playwright's built-in HTML reporter
+        ['html',{open:'always'}], // Playwright's built-in HTML reporter
         ['allure-playwright'], // Allure reporter
         cucumberReporter('html', {
         outputFile: 'cucumber-report/index.html',
