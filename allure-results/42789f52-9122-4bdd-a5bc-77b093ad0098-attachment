@@ -1,0 +1,129 @@
+You are an expert in Playwright BDD testing.
+Fix the error in the BDD scenario.
+
+- Provide response as a diff highlighted code snippet.
+- First try to fix test by adjusting Gherkin steps parameters.
+- If test is not fixable by Gherkin, try to modify the code snippet.
+- Strictly rely on the ARIA snapshot of the page.
+- Avoid adding any new code.
+- Avoid adding comments to the code.
+- Avoid changing the test logic.
+- Use only role-based locators: getByRole, getByLabel, etc.
+- Add a concise note about applied changes.
+- If the test may be correct and there is a bug in the page, note it.
+
+Failing gherkin scenario: 
+
+Scenario: Login to Parabank with invalid username "Test123" and password "test@344"
+  Given I login to the parabank application
+  When I enter invalid "Test123" and "test@344"
+  And click on login button
+  Then I should see error message "Error!"
+  And also should see "The username and password could not be verified."
+
+Error details:
+Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByText('Please enter a username and')
+Expected: "The username and password could not be verified."
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toHaveText" with timeout 5000ms
+  - waiting for getByText('Please enter a username and')
+
+  public async verifySecondErrorMeesage(errorMessage:string){
+    await expect(this.secondErrorMessage).toHaveText(errorMessage)
+  }
+}
+
+ARIA snapshot of the page:
+
+- document:
+  - link:
+    - /url: admin.htm
+    - img
+  - link "ParaBank":
+    - /url: index.htm
+    - img "ParaBank"
+  - paragraph: Experience the difference
+  - list:
+    - listitem: Solutions
+    - listitem:
+      - link "About Us":
+        - /url: about.htm
+    - listitem:
+      - link "Services":
+        - /url: services.htm
+    - listitem:
+      - link "Products":
+        - /url: http://www.parasoft.com/jsp/products.jsp
+    - listitem:
+      - link "Locations":
+        - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+    - listitem:
+      - link "Admin Page":
+        - /url: admin.htm
+  - list:
+    - listitem:
+      - link "home":
+        - /url: index.htm
+    - listitem:
+      - link "about":
+        - /url: about.htm
+    - listitem:
+      - link "contact":
+        - /url: contact.htm
+  - heading "Customer Login" [level=2]
+  - paragraph: Username
+  - textbox
+  - paragraph: Password
+  - textbox
+  - button "Log In"
+  - paragraph:
+    - link "Forgot login info?":
+      - /url: lookup.htm
+  - paragraph:
+    - link "Register":
+      - /url: register.htm
+  - heading "Error!" [level=1]
+  - paragraph: The username and password could not be verified.
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.htm
+      - text: "|"
+    - listitem:
+      - link "About Us":
+        - /url: about.htm
+      - text: "|"
+    - listitem:
+      - link "Services":
+        - /url: services.htm
+      - text: "|"
+    - listitem:
+      - link "Products":
+        - /url: http://www.parasoft.com/jsp/products.jsp
+      - text: "|"
+    - listitem:
+      - link "Locations":
+        - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+      - text: "|"
+    - listitem:
+      - link "Forum":
+        - /url: http://forums.parasoft.com/
+      - text: "|"
+    - listitem:
+      - link "Site Map":
+        - /url: sitemap.htm
+      - text: "|"
+    - listitem:
+      - link "Contact Us":
+        - /url: contact.htm
+  - paragraph: © Parasoft. All rights reserved.
+  - list:
+    - listitem: "Visit us at:"
+    - listitem:
+      - link "www.parasoft.com":
+        - /url: http://www.parasoft.com/

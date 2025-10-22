@@ -1,0 +1,149 @@
+You are an expert in Playwright BDD testing.
+Fix the error in the BDD scenario.
+
+- Provide response as a diff highlighted code snippet.
+- First try to fix test by adjusting Gherkin steps parameters.
+- If test is not fixable by Gherkin, try to modify the code snippet.
+- Strictly rely on the ARIA snapshot of the page.
+- Avoid adding any new code.
+- Avoid adding comments to the code.
+- Avoid changing the test logic.
+- Use only role-based locators: getByRole, getByLabel, etc.
+- Add a concise note about applied changes.
+- If the test may be correct and there is a bug in the page, note it.
+
+Failing gherkin scenario: 
+
+Scenario: Verify user can login, transfer funds and see transaction
+  Given User navigates to ParaBank login page
+  When User logs in with username and password
+  Then User should see the account overview page
+  When User transfers 100 from account 13344 to account 13344
+  Then Transfer confirmation message should appear
+
+Error details:
+Error: expect(locator).toHaveText(expected) failed
+
+Locator: locator('#rightPanel > div > div > h1')
+Expected: "Transfer Complete!"
+Error: strict mode violation: locator('#rightPanel > div > div > h1') resolved to 3 elements:
+    1) <h1 class="title">↵⇆⇆⇆Transfer Funds↵⇆⇆</h1> aka getByRole('heading', { name: 'Transfer Funds' })
+    2) <h1 class="title">Transfer Complete!</h1> aka getByText('Transfer Complete!')
+    3) <h1 class="title">↵⇆⇆⇆Error!↵⇆⇆</h1> aka getByText('Error!')
+
+Call log:
+  - Expect "toHaveText" with timeout 5000ms
+  - waiting for locator('#rightPanel > div > div > h1')
+
+  async verifyTransferSuccess() {
+    await expect(this.confirmation).toHaveText('Transfer Complete!');
+  }
+
+  public async verifyRecentActivity(){
+    await expect(this.page.locator('h1.title')).toHaveText('Transaction Results');
+
+ARIA snapshot of the page:
+
+- document:
+  - link:
+    - /url: admin.htm
+    - img
+  - link "ParaBank":
+    - /url: index.htm
+    - img "ParaBank"
+  - paragraph: Experience the difference
+  - list:
+    - listitem: Solutions
+    - listitem:
+      - link "About Us":
+        - /url: about.htm
+    - listitem:
+      - link "Services":
+        - /url: services.htm
+    - listitem:
+      - link "Products":
+        - /url: http://www.parasoft.com/jsp/products.jsp
+    - listitem:
+      - link "Locations":
+        - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+    - listitem:
+      - link "Admin Page":
+        - /url: admin.htm
+  - list:
+    - listitem:
+      - link "home":
+        - /url: index.htm
+    - listitem:
+      - link "about":
+        - /url: about.htm
+    - listitem:
+      - link "contact":
+        - /url: contact.htm
+  - paragraph: Welcome John Smith
+  - heading "Account Services" [level=2]
+  - list:
+    - listitem:
+      - link "Open New Account":
+        - /url: openaccount.htm
+    - listitem:
+      - link "Accounts Overview":
+        - /url: overview.htm
+    - listitem:
+      - link "Transfer Funds":
+        - /url: transfer.htm
+    - listitem:
+      - link "Bill Pay":
+        - /url: billpay.htm
+    - listitem:
+      - link "Find Transactions":
+        - /url: findtrans.htm
+    - listitem:
+      - link "Update Contact Info":
+        - /url: updateprofile.htm
+    - listitem:
+      - link "Request Loan":
+        - /url: requestloan.htm
+    - listitem:
+      - link "Log Out":
+        - /url: logout.htm
+  - heading "Transfer Complete!" [level=1]
+  - paragraph: "$100.00 has been transferred from account #13344 to account #13344."
+  - paragraph: See Account Activity for more details.
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.htm
+      - text: "|"
+    - listitem:
+      - link "About Us":
+        - /url: about.htm
+      - text: "|"
+    - listitem:
+      - link "Services":
+        - /url: services.htm
+      - text: "|"
+    - listitem:
+      - link "Products":
+        - /url: http://www.parasoft.com/jsp/products.jsp
+      - text: "|"
+    - listitem:
+      - link "Locations":
+        - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+      - text: "|"
+    - listitem:
+      - link "Forum":
+        - /url: http://forums.parasoft.com/
+      - text: "|"
+    - listitem:
+      - link "Site Map":
+        - /url: sitemap.htm
+      - text: "|"
+    - listitem:
+      - link "Contact Us":
+        - /url: contact.htm
+  - paragraph: © Parasoft. All rights reserved.
+  - list:
+    - listitem: "Visit us at:"
+    - listitem:
+      - link "www.parasoft.com":
+        - /url: http://www.parasoft.com/
