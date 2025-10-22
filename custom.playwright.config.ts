@@ -17,21 +17,28 @@ const testDir = defineBddConfig({
 export default defineConfig({
   testDir,
   reporter: [
-    cucumberReporter('html', {
-      outputFile: 'cucumber-report/index.html',
-      externalAttachments: true,
-    }),
-    ['html', { open: 'never' }],
-  ],
+        ['html'], // Playwright's built-in HTML reporter
+        ['allure-playwright'], // Allure reporter
+      ],
+      
+  // reporter: [
+  //   cucumberReporter('html', {
+  //     outputFile: 'cucumber-report/index.html',
+  //     externalAttachments: true,
+  //   }),
+  //   ['html', { open: 'never' }],
+  // ],
   
   use: {
     screenshot: 'on',
     trace: 'on',
     headless: false,
+    viewport: null,
+    // colorScheme: 'dark',
     launchOptions: 
     {
       args:[
-          "--start-maximized",
+          // "--start-maximized",
           "--disable-plugins",
           "--disable-extensions",
           "--edge-skip-compat-layer-relaunch"
