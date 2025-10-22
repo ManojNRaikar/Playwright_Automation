@@ -9,15 +9,12 @@ When('I enter valid credentials', async function () {
 });
 
 When('click on login button', async function () {
-  
+  await this.login.clickBtn();
 });
 
 Then('I should be logged in successfully', async function () {
-
+await this.accountPage.verifyLoginSuccess()
 });
 
-Then('I should see the Welcome message with username {string}', async function (arg: string) {
-  
-});
 
 

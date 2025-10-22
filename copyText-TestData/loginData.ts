@@ -3,8 +3,8 @@ export const loginData={
 
 validUser:
 {
-username:"Test",
-password:"Test321@"
+username:"john",
+password:"demo"
 },
 
 invalidUser:

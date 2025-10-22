@@ -5,3 +5,6 @@
 # Run Allure reports
 1. npx allure generate allure-results --clean or     npx allure generate allure-results --clean && npx allure open
 2. npx allure open./allure-report
+
+# Storage state.json file saving
+npx playwright codegen url --save-storage=login.json  ---> use this login.json file inside the use:{}
