@@ -22,7 +22,7 @@ export default defineConfig({
         ['allure-playwright'], // Allure reporter
         cucumberReporter('html', {
         outputFile: 'cucumber-report/index.html',
-        externalAttachments: true,}) // Cucumber 
+        externalAttachments: true,}) // Cucumber repoter
       ],
   
   use: {

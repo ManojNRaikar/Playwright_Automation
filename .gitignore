@@ -4,5 +4,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /cucumber-report/
+/cucumber-report/index.html
 /allure-report/
 /allure-results/
