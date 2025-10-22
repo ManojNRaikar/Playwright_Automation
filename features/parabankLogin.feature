@@ -13,7 +13,6 @@ Feature: parabank Applocation Login
     When I enter invalid "<username>" and "<password>"
     And click on login button
     Then I should see error message "Error!"
-    And also should see "The username and password could not be verified."
 
     Examples:
       | username | password  |

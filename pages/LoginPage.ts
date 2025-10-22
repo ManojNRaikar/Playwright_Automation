@@ -16,7 +16,7 @@ export class LoginPage extends BasePage {
   private ErrorMessage: Locator = this.page.getByRole("heading", {
     name: "Error!",
   });
-  private secondErrorMessage:Locator = this.page.getByText('Please enter a username and');
+  private secondErrorMessage:Locator = this.page.getByText('Please enter a username and password.');
 
   // Action Methods
 
