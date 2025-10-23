@@ -1,4 +1,0 @@
- Scenario started
-Test
-Test@12345
- Scenario ended

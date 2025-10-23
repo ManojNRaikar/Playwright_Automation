@@ -1,1 +1,1 @@
-[{"data":{"duration":30950}}]
+[{"buildOrder":4,"reportUrl":"http://localhost:8080/job/playwrightauto-local/4/allure","reportName":"AllureReport","data":{"duration":29236}},{"buildOrder":3,"reportUrl":"http://localhost:8080/job/playwrightauto-local/3/allure","reportName":"AllureReport","data":{"duration":34247}},{"buildOrder":2,"reportUrl":"http://localhost:8080/job/playwrightauto-local/2/allure","reportName":"AllureReport","data":{"duration":37143}}]

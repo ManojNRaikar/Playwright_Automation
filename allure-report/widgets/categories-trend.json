@@ -1,1 +1,1 @@
-[{"data":{"Test defects":1}}]
+[{"buildOrder":4,"reportUrl":"http://localhost:8080/job/playwrightauto-local/4/allure","reportName":"AllureReport","data":{}},{"buildOrder":3,"reportUrl":"http://localhost:8080/job/playwrightauto-local/3/allure","reportName":"AllureReport","data":{}},{"buildOrder":2,"reportUrl":"http://localhost:8080/job/playwrightauto-local/2/allure","reportName":"AllureReport","data":{}}]
